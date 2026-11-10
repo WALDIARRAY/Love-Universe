@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Universe Made for You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="stars"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <main class="landing">
+
+        <p class="eyebrow">✦ A LITTLE SOMETHING FOR YOU ✦</p>
+
+        <div class="celestial">
+            <div class="sun">☀</div>
+            <div class="orbit">
+                <div class="moon">☾</div>
+            </div>
+        </div>
+
+        <h1>A Little Universe<br>
+            <span>Made for You</span>
+        </h1>
+
+        <p class="subtitle">
+            Somewhere between the Sun and the Moon,<br>
+            there is a universe that belongs to us.
+        </p>
+
+        <p class="birthday">✧ On Your Special Day ✧</p>
+
+        <button class="enter-btn" onclick="enterUniverse()">
+            Enter Our Universe <span>→</span>
+        </button>
+
+        <p class="footer-text">Made with love, just for you ♡</p>
+
+    </main>
+    <section class="birthday-screen" id="birthdayScreen">
+
+    <p class="eyebrow">✦ BEST DAY FOR ME ✦</p>
+    
+
+    <h1 class="birthday-title">
+        Happy Birthday,
+        <span>My Everything</span>
+    </h1>
+
+    <p class="birthday-subtitle">
+        Another year of you making this universe more beautiful
+    </p>
+
+    
+<div class="cake-container" onclick="celebrate()">
+
+    <div class="cake-scene">
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="cake-top"></div>
+
+        <div class="cake-layer layer-top"></div>
+        <div class="cake-layer layer-middle"></div>
+        <div class="cake-layer layer-bottom"></div>
+
+        <div class="cake-plate"></div>
+
+    </div>
+
+    <p id="cakeHint">Make a wish and click the cake</p>
+
+</div>
+
+    <div id="birthdayMessage" class="birthday-message">
+        I hope this new chapter of your life brings you endless happiness, beautiful memories, countless reasons to smile, and everything your heart has ever wished for
+
+I hope you never stop chasing your dreams, never lose that beautiful smile, and never forget how incredibly special you are. You deserve all the love, peace and happiness this universe has to offer
+
+And whenever life feels a little dark, I hope you remember that somewhere in this endless universe, there's a Sun that will always shine for its Moon
+
+Happy Birthday, my favourite person May your world always be filled with love and everything you deserve and i promise to give you all and beautiful little moments. ❤️
+    </div>
+    <button
+    class="enter-btn continue-btn"
+    id="continueBtn"
+    onclick="showFinalScreen()"
+>
+    Continue Our Journey →
+</button>
+
+</section>
+
+<!-- FINAL SCREEN -->
+
+<section class="final-screen" id="finalScreen">
+
+    <p class="eyebrow">✦My Love For You Is Just Like This Endless Universe✦</p>
+
+    <h1>
+        A Universe<br>
+        <span>Waiting for You</span>
+    </h1>
+
+    <p class="subtitle">
+        Every star, every memory and every little surprise
+        has brought you here.
+    </p>
+
+    <button class="enter-btn" onclick="showUniverse()">
+        Explore Our Little Universe →
+    </button>
+
+    <p class="footer-text">Forever your Sun, from your Moon's universe ♡</p>
+
+</section>
+
+<!-- CELESTIAL ATLAS -->
+
+<section class="universe-hub" id="universeHub">
+
+    <header class="atlas-header">
+        <p class="eyebrow"></p>
+        <h1>Our Little <span>Universe</span></h1>
+        <p>Somewhere in this endless universe, there is a world made just for us.</p>
+    </header>
+
+    <div class="atlas-layout">
+
+        <!-- CONSTELLATION MAP -->
+
+        <div class="star-map">
+            <div class="map-stars"></div>
+<div class="nebula nebula-one"></div>
+<div class="nebula nebula-two"></div>
+
+            <div class="map-coordinate coordinate-one">RA 05h 35m</div>
+            
+            <svg class="constellation-lines"
+                 viewBox="0 0 1000 650"
+                 preserveAspectRatio="none">
+
+                <g class="main-lines">
+                    <path d="M130 160 L300 90 L460 180 L650 100 L850 190"/>
+                    <path d="M130 160 L250 340 L460 180 L550 420 L850 190"/>
+                    <path d="M250 340 L120 510 L400 560 L550 420"/>
+                    <path d="M550 420 L760 530 L850 190"/>
+                    <path d="M460 180 L400 560"/>
+                    <path d="M650 100 L760 530"/>
+                </g>
+
+                <g class="secondary-lines">
+                    <path d="M130 160 L210 230 L300 90"/>
+                    <path d="M250 340 L350 280 L460 180"/>
+                    <path d="M550 420 L680 330 L850 190"/>
+                </g>
+
+            </svg>
+
+            <!-- NINE DESTINATIONS -->
+
+            <button class="star-point point-1"
+                style="--x:13%;--y:25%"
+                onclick="selectDestination('story')">
+                <span class="star-core"></span>
+                <span class="star-label">01 · CHOOSE OUR STORY</span>
+            </button>
+
+            <button class="star-point point-2"
+                style="--x:30%;--y:14%"
+                onclick="selectDestination('treasure')">
+                <span class="star-core"></span>
+                <span class="star-label">02 · TREASURE HUNT </span>
+            </button>
+
+            <button class="star-point point-3"
+                style="--x:46%;--y:28%"
+                onclick="selectDestination('game')">
+                <span class="star-core"></span>
+                <span class="star-label">03 · A TINY GAME</span>
+            </button>
+
+            <button class="star-point point-4"
+                style="--x:65%;--y:15%"
+                onclick="selectDestination('sky')">
+                <span class="star-core"></span>
+                <span class="star-label">04 · THE STARS</span>
+            </button>
+
+            <button class="star-point point-5"
+                style="--x:85%;--y:29%"
+                onclick="selectDestination('moon')">
+                <span class="star-core"></span>
+                <span class="star-label">05 · EVERY MOON REMINDS ME OF YOU</span>
+            </button>
+
+            <button class="star-point point-6"
+                style="--x:25%;--y:52%"
+                onclick="selectDestination('distance')">
+                <span class="star-core"></span>
+                <span class="star-label">06 · DISTANCE BETWEEN US</span>
+            </button>
+
+            <button class="star-point point-7"
+                style="--x:55%;--y:65%"
+                onclick="selectDestination('together')">
+                <span class="star-core"></span>
+                <span class="star-label">07 · IF WE WERE TOGETHER</span>
+            </button>
+
+            <button class="star-point point-8"
+                style="--x:12%;--y:79%"
+                onclick="selectDestination('sunmoon')">
+                <span class="star-core"></span>
+                <span class="star-label">08 · THE TWO OF US</span>
+            </button>
+
+            <button class="star-point point-9"
+                style="--x:76%;--y:81%"
+                onclick="selectDestination('letters')">
+                <span class="star-core"></span>
+                <span class="star-label">09 · OPEN WHEN...</span>
+            </button>
+
+            <div class="map-center">
+
+    <div class="celestial-system">
+
+        <div class="celestial-orbit">
+
+            <div class="orbit-sun"></div>
+
+            <svg class="orbit-moon" viewBox="0 0 60 60">
+    <path
+        d="M 39 5
+           A 26 26 0 1 0 39 55
+           A 19 26 0 0 1 39 5 Z"
+        fill="url(#moonGradient)"
+    />
+
+    <defs>
+        <linearGradient id="moonGradient"
+            x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="55%" stop-color="#e8e4fa"/>
+            <stop offset="100%" stop-color="#aaa5c8"/>
+        </linearGradient>
+    </defs>
+</svg>
+
+        </div>
+
+        <div class="center-label">YOU & ME</div>
+
+    </div>
+
+</div>
+
+            <div class="map-caption">
+                SELECT A STAR TO DISCOVER ITS WORLD
+            </div>
+
+        </div>
+
+        <!-- DESTINATION INFORMATION PANEL -->
+
+        <aside class="destination-panel" id="destinationPanel">
+
+            <button class="panel-close"
+                onclick="closeDestination()"
+                aria-label="Close panel">×</button>
+
+            <p class="panel-number" id="panelNumber">
+                THE CELESTIAL ATLAS
+            </p>
+
+            <h2 id="panelTitle">
+                Nine little worlds.
+                <span>One universe.</span>
+            </h2>
+
+            <p class="panel-description" id="panelDescription">
+                Every star has a story. Every destination holds
+                something I made especially for you.
+
+                Choose a constellation and let's begin.
+            </p>
+
+            <div class="panel-divider"></div>
+
+            <button class="panel-enter"
+                id="panelEnter"
+                onclick="enterDestination()"
+                disabled>
+                Select a constellation
+                <span>→</span>
+            </button>
+
+            <p class="panel-footer">
+                A LITTLE UNIVERSE MADE WITH LOVE
+            </p>
+
+        </aside>
+
+    </div>
+
+    <footer class="atlas-footer">
+        <span>NINE CONSTELLATIONS</span>
+        <span>☀ THE SUN & THE MOON ☾</span>
+        <span>ONE SHARED UNIVERSE</span>
+    </footer>
+
+</section>
+<!-- STAR EXPLORER -->
+<section id="starExplorer" class="star-explorer">
+
+    <canvas id="spaceCanvas"></canvas>
+
+    <div class="star-explorer-content">
+
+        <header class="star-explorer-header">
+            <button class="star-back" onclick="exitStarExplorer()">
+                ← Back to Universe
+            </button>
+
+            <p>✦ A LITTLE UNIVERSE JUST FOR YOU ✦</p>
+        </header>
+
+        <div class="star-explorer-title">
+            <p class="eyebrow">THE STARS</p>
+            <h1>A Thousand <span>Stars</span></h1>
+            <p>Somewhere among these stars are a thousand reasons why I love you</p>
+        </div>
+
+        <div class="star-instructions">
+            <span>✦</span> Click on any glowing star to discover a little message
+        </div>
+
+        <div id="starMessage" class="star-message">
+            <button class="star-message-close" onclick="closeStarMessage()">×</button>
+            <span class="message-star">✧</span>
+            <p id="starMessageNumber">A LITTLE REASON</p>
+            <h2 id="starMessageText"></h2>
+            <span class="message-decoration">☾ ✦ ☀</span>
+        </div>
+
+        <footer class="star-explorer-footer">
+            EVERY STAR HOLDS A LITTLE PIECE OF MY HEART
+        </footer>
+
+    </div>
+
+</section>
+<!-- MULTIVERSE INTRODUCTION -->
+
+<section class="multiverse-intro" id="multiverseIntro">
+
+    <div class="intro-stars"></div>
+
+    <div class="intro-content">
+
+        <p class="eyebrow">✦ A QUESTION FROM ANOTHER POSSIBILITY ✦</p>
+
+        <h1>What if we had<br><span>met differently?</span></h1>
+
+        <div class="intro-divider"></div>
+
+        <p>
+            What if, instead of meeting through a screen,
+            our paths had crossed somewhere else?
+        </p>
+
+        <p>
+            What if we had met on a rainy evening, on a train,
+            in a little café, or in a city neither of us knew?
+        </p>
+
+        <p>
+            What if we had been complete strangers, knowing
+            nothing about each other, until one little moment
+            brought us together?
+        </p>
+
+        <p>
+            Would you have noticed me?
+        </p>
+
+        <p>
+            Would I have found a reason to talk to you?
+        </p>
+
+        <p>
+            Would we still have laughed at the same silly things,
+            shared our little secrets, and slowly become
+            important to each other?
+        </p>
+
+        <p>
+            I wonder how many different ways we could have met,
+            and how many different beginnings we could have had.
+        </p>
+
+        <h2>But I have always wondered one thing...</h2>
+
+        <h1 class="intro-final">
+            Would I have found you<br>
+            <span>in every lifetime?</span>
+        </h1>
+<button class="enter-btn" onclick="showUniverseChoices()">
+            Continue <span>→</span>
+        </button>
+
+    </div>
+
+
+</section>
+<!-- CHOOSE YOUR UNIVERSE -->
+<section class="universe-choices" id="universeChoices">
+
+    <div class="universe-choices-content">
+
+        <p class="eyebrow">✦ FOUR POSSIBILITIES · FOUR BEGINNINGS ✦</p>
+
+        <h1>Choose a universe</h1>
+
+        <p class="universe-subtitle">
+            Somewhere, in another version of our lives,
+            our story began differently. Which universe
+            would you like to explore first?
+        </p>
+
+        <div class="universe-choice-grid">
+
+            <div class="universe-card" onclick="chooseUniverse('train')">
+                <span class="universe-number">01</span>
+                <h2>The Last Train Home</h2>
+                <p>Two strangers. One delayed train. A meeting neither expected.</p>
+                <span class="universe-explore">EXPLORE UNIVERSE →</span>
+            </div>
+
+            <div class="universe-card" onclick="chooseUniverse('rain')">
+                <span class="universe-number">02</span>
+                <h2>Under the Same Rain</h2>
+                <p>One rainy evening, one umbrella, and an unexpected connection.</p>
+                <span class="universe-explore">EXPLORE UNIVERSE →</span>
+            </div>
+
+            <div class="universe-card" onclick="chooseUniverse('city')">
+                <span class="universe-number">03</span>
+                <h2>The City We Got Lost In</h2>
+                <p>Two strangers lose their way and somehow find each other.</p>
+                <span class="universe-explore">EXPLORE UNIVERSE →</span>
+            </div>
+
+            <div class="universe-card" onclick="chooseUniverse('sunmoon')">
+                <span class="universe-number">04</span>
+                <h2>The Sun Who Guarded the Moon</h2>
+                <p>A princess, her royal guard, and a love they were never meant to have.</p>
+                <span class="universe-explore">EXPLORE UNIVERSE →</span>
+            </div>
+
+        </div>
+
+        <p class="universe-choices-footer">
+            FOUR UNIVERSES. FOUR DIFFERENT WAYS TO FIND YOU.
+        </p>
+
+    </div>
+</section>
+
+<!-- THE SEVEN KEYS TREASURE HUNT -->
+<section id="treasureScreen" class="treasure-screen" style="display: none;">
+
+    <div class="treasure-stars">☀ ✦ ☾ ✦</div>
+
+    <header class="treasure-header">
+        <button class="treasure-back" onclick="exitTreasureHunt()">
+            ← Back to Universe
+        </button>
+        <p>✦ A SECRET MADE FOR YOU ✦</p>
+    </header>
+
+    <main class="treasure-container">
+
+        <div class="treasure-intro">
+            <span class="treasure-eyebrow"></span>
+            <h1>The <span>Seven Keys</span></h1>
+            <p>
+                Seven mysteries. Seven hidden keys.
+                <br>
+                THIS ONE IS LITTLE UHMMM😋
+            </p>
+        </div>
+
+        <div class="treasure-progress-card">
+            <div class="treasure-progress-top">
+                <span>YOUR COLLECTION</span>
+                <strong id="keysCollected">0 / 7 KEYS</strong>
+            </div>
+
+            <div class="treasure-progress-track">
+                <div id="treasureProgressBar"></div>
+            </div>
+
+            <div id="treasureKeys" class="treasure-key-list">
+                <span class="treasure-key locked">?</span>
+                <span class="treasure-key locked">?</span>
+                <span class="treasure-key locked">?</span>
+                <span class="treasure-key locked">?</span>
+                <span class="treasure-key locked">?</span>
+                <span class="treasure-key locked">?</span>
+                <span class="treasure-key locked">?</span>
+            </div>
+        </div>
+
+        <div id="treasureClue" class="treasure-clue-card">
+
+            <div class="treasure-sunmoon">☀ <span>☾</span></div>
+
+            <p id="clueNumber" class="clue-number">MYSTERY 01 OF 07</p>
+
+            <h2 id="clueTitle">The First Mystery</h2>
+
+            <p id="clueQuestion" class="clue-question">
+                I shine in the night, but I am not a star.
+                I change my shape, yet I never leave the sky.
+                What am I?
+            </p>
+
+            <form id="treasureAnswerForm">
+                <input
+                    type="text"
+                    id="clueAnswer"
+                    placeholder="Your answer..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" class="treasure-submit">
+                    Unlock the Key <span>→</span>
+                </button>
+            </form>
+
+            <p id="clueFeedback" class="clue-feedback"></p>
+
+            <p class="treasure-hint">
+                Think carefully Every answer brings you closer.
+            </p>
+
+        </div>
+
+        <div id="treasureComplete" class="treasure-complete" style="display:none;">
+
+            <div class="chest-symbol">♛</div>
+            <p class="treasure-eyebrow">ALL SEVEN KEYS COLLECTED</p>
+
+            <h2>The Final Treasure</h2>
+
+            <p>
+                Every mystery has led you here.
+                The final chest is finally yours to open.
+            </p>
+
+            <button class="treasure-submit" onclick="revealMarriageCertificate()">
+                Open the Treasure Chest ✨
+            </button>
+
+        </div>
+
+        <div id="marriageCertificate" class="marriage-certificate" style="display:none;">
+
+            <div class="certificate-sun">☀</div>
+            <div class="certificate-moon">☾</div>
+
+            <p class="certificate-kicker">A SPECIAL PROMISE</p>
+
+            <h2>A Promise <span>Under the Same Sky</span></h2>
+
+            <div class="certificate-divider">✦ ✧ ☾ ✧ ✦</div>
+
+            <p class="certificate-intro">
+                Beneath the same stars and under the same endless sky,
+                this little universe celebrates
+            </p>
+
+            <h1 class="certificate-names">Jiten <span>&</span> Sandhiya</h1>
+
+            <p class="certificate-message">
+                I, Jiten, promise to choose My Sandhiya every single day, in every lifetime, through every aspects of life. I promise to hold her hand through ordinary mornings, stand beside her through difficult nights, laugh with her through endless adventures, and cherish every beautiful moment we create together. I promise to be her strength when she feels weak, her comfort when the world feels heavy, I promise to make her feel safe No matter how life changes, my love will remain constant. Today, tomorrow, and for all the lifetimes to come, my heart will always belong to My Sandhiya. This is my promise, not just for a lifetime, but for eternity.
+            </p>
+
+            <div class="certificate-date">
+                <span>OUR SPECIAL DATE</span>
+                <strong>10 NOVEMBER 2026</strong>
+            </div>
+
+            <div class="certificate-signatures">
+                <div>
+                    <span>☀</span>
+                    <p>Jiten</p>
+                </div>
+                <div>
+                    <span>☾</span>
+                    <p>Sandhiya</p>
+                </div>
+            </div>
+
+            <p class="certificate-footer">
+                A SYMBOLIC CERTIFICATE OF LOVE · MADE WITH ALL MY HEART
+            </p>
+
+            <button class="treasure-submit certificate-restart"
+                onclick="restartTreasureHunt()">
+                Relive the Treasure Hunt ↻
+            </button>
+
+        </div>
+
+    </main>
+
+    <p class="treasure-footer">
+        TWO LIGHTS · ONE SKY · ONE LITTLE UNIVERSE
+    </p>
+
+</section>
+
+<!-- THE LAST TRAIN HOME — STORY SCREEN -->
+
+<section class="story-screen" id="storyScreen">
+
+    <div class="story-background"></div>
+    <header class="story-header">
+
+    <button class="story-back" onclick="exitStory()">
+        ← Back to Universe
+    </button>
+
+    <button
+        class="story-previous"
+        id="storyPrevious"
+        onclick="goBackStory()"
+        style="display: none;"
+    >
+        ← Previous Scene
+    </button>
+
+    <p>ALTERNATE UNIVERSE</p>
+
+    <span id="storyProgress">SCENE 01 / 08</span>
+
+</header>
+
+
+    <main class="story-container">
+
+        <div class="story-image" id="storyImage">
+            <div class="story-image-overlay"></div>
+            <span id="storyLocation">PLATFORM 04 · 11:47 PM</span>
+        </div>
+
+        <div class="story-content">
+
+            <p class="story-scene-label" id="storySceneLabel">
+                THE FIRST ENCOUNTER
+            </p>
+
+            <h1 id="storyTitle">The Empty Platform</h1>
+
+            <div class="story-divider"></div>
+
+            <div class="story-narrative" id="storyNarrative"></div>
+
+            <div class="story-dialogue" id="storyDialogue"></div>
+
+            <p class="story-choice-heading" id="choiceHeading">
+                WHAT WILL SANDHIYA DO?
+            </p>
+
+            <div class="story-choices" id="storyChoices"></div>
+
+            <p class="story-footer">
+                SOME JOURNEYS ARE MEANT TO CHANGE EVERYTHING
+            </p>
+
+        </div>
+
+    </main>
+
+</section>
+    <script src="script.js"></script>
+</body>
+</html>

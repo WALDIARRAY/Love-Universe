@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080e17">
+
+    <title>The Distance Between Us 🌍</title>
+
+    <link rel="stylesheet" href="earth.css">
+
+    <!-- Import map for Three.js -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+
+    <header class="topbar">
+
+        <button class="back-button" id="backButton">
+            ← Back to Celestial Atlas
+        </button>
+
+        <div class="brand">
+            JITEN <span>×</span> SANDHIYA
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- INTRO -->
+
+        <section class="intro">
+
+            <p class="eyebrow">SOMEWHERE ON THIS PLANET</p>
+
+            <h1>
+                The Distance<br>
+                <span>Between Us.</span>
+            </h1>
+
+            <p class="intro-text">
+                Two different places. One enormous world.
+                And two people who found each other.
+            </p>
+
+        </section>
+
+
+        <!-- EARTH EXPERIENCE -->
+
+        <section class="earth-section">
+
+            <div class="globe-container" id="globeContainer">
+
+                <div class="loading" id="loading">
+                    <div class="loader"></div>
+                    <p>Preparing our little world...</p>
+                </div>
+
+                <div id="globe"></div>
+
+                <!-- LOCATION LABELS -->
+
+                <div class="location-label delhi-label" id="delhiLabel">
+                    <span class="label-dot"></span>
+                    <div>
+                        <strong>JITEN</strong>
+                        <small>New Delhi, India</small>
+                    </div>
+                </div>
+
+                <div class="location-label chennai-label" id="chennaiLabel">
+                    <span class="label-dot sandhiya-dot"></span>
+                    <div>
+                        <strong>SANDHIYA</strong>
+                        <small>Vandalur, Chennai</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="globe-controls">
+
+                <p>
+                    DRAG TO ROTATE 
+                </p>
+
+                <button id="resetView">
+                    Reset Earth ↺
+                </button>
+
+            </div>
+
+<!-- DISTANCE PANEL -->
+
+    <div class="distance-panel">
+
+        <p class="eyebrow">THE DISTANCE BETWEEN US</p>
+
+        <div class="distance-number" id="distanceNumber">
+            ≈1800 <span>KM</span>
+        </div>
+
+        <p class="distance-caption" id="distanceCaption">
+            The straight-line distance between our two locations. ❤️
+        </p>
+
+        <div class="locations-row">
+
+        <div class="location-info">
+            <span class="location-dot jiten-dot"></span>
+            <div>
+                <strong>Jiten</strong>
+                <small>New Delhi</small>
+            </div>
+        </div>
+
+        <div class="connecting-line"></div>
+
+        <div class="location-info right-location">
+            <span class="location-dot sandhiya-dot"></span>
+            <div>
+                <strong>Sandhiya</strong>
+                <small>Vandalur, Chennai</small>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="distance-note">
+        Even though  ≈1,800 kilometres separate us,
+        I'll never let you feel that distance.
+
+        No matter how far apart we are, I'll always
+        make sure you feel loved.
+
+        Because distance may separate our places,
+        but you'll always be the closest person
+        to my heart. ❤️
+    </div>
+
+</div>
+        <!-- FINAL MESSAGE -->
+
+        <section class="final-section" id="finalSection">
+
+            <div class="final-earth">🌍</div>
+
+            <p class="eyebrow">A LITTLE REMINDER</p>
+
+            <h2>
+                One world.<br>
+                <span>Two different places.</span>
+            </h2>
+
+            <div class="final-message">
+
+                In this enormous world, we're living in two
+                different places, separated by thousands of
+                kilometres.
+
+                <br><br>
+
+                But no matter how far apart we are, there's
+                one thing I know.
+
+                <br><br>
+
+                You're someone I would always choose,
+                in every corner of this world.
+
+                <br><br>
+
+                Until the day distance is no longer between us. ❤️
+
+            </div>
+
+            <p class="signature">
+                Always yours ♡
+            </p>
+
+            <button class="back-button final-back" id="finalBackButton">
+                Return to Celestial Atlas →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        ONE PLANET · TWO LOCATIONS · ONE SPECIAL PERSON
+    </footer>
+
+
+    <script type="module" src="earth.js"></script>
+
+</body>
+</html>

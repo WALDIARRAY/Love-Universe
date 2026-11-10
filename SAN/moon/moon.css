@@ -1,0 +1,776 @@
+:root {
+    --night: #080b1b;
+    --night-soft: #10152b;
+    --lavender: #d9d0ff;
+    --muted: #a7a9c2;
+    --gold: #f2d8a2;
+    --white: #f7f4ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 15%,
+            #202445 0%,
+            #10152b 34%,
+            var(--night) 76%
+        );
+
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* BACKGROUND */
+
+.sky-noise {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .22;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 70% 30%, #fff 99%, transparent),
+        radial-gradient(2px 2px at 42% 75%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 88% 82%, #fff 99%, transparent);
+
+    background-size:
+        230px 210px,
+        310px 280px,
+        370px 320px,
+        270px 260px;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stars-one {
+    opacity: .34;
+
+    background-image:
+        radial-gradient(1px 1px, #fff 99%, transparent);
+
+    background-size: 83px 91px;
+}
+
+.stars-two {
+    opacity: .18;
+
+    background-image:
+        radial-gradient(2px 2px, #d9d0ff 99%, transparent);
+
+    background-size: 157px 139px;
+    background-position: 40px 20px;
+}
+
+
+/* MAIN PAGE */
+
+.moon-page {
+    position: relative;
+    z-index: 1;
+
+    width: min(1120px, 100% - 44px);
+    margin: auto;
+}
+
+
+/* NAVIGATION */
+
+.topbar {
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #ffffff12;
+}
+
+.back-button {
+    color: #e9e4ff;
+    border: 1px solid #c9c2ed55;
+    background: #ffffff08;
+
+    border-radius: 999px;
+    padding: 11px 17px;
+
+    cursor: pointer;
+    transition: .25s;
+
+    font: 12px/1.2 Arial, sans-serif;
+    letter-spacing: .04em;
+}
+
+.back-button:hover {
+    background: #ffffff17;
+    border-color: #e3d9ff;
+
+    transform: translateY(-2px);
+}
+
+.topbar-mark {
+    font: 10px Arial, sans-serif;
+    letter-spacing: .2em;
+    color: #b8b5d0;
+}
+
+.topbar-mark span {
+    color: var(--gold);
+    padding: 0 7px;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 690px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 76px 0 38px;
+}
+
+.eyebrow {
+    color: var(--gold);
+
+    font: 10px Arial, sans-serif;
+    letter-spacing: .25em;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: 400;
+    line-height: 1.08;
+
+    margin: 20px 0 16px;
+}
+
+h1 em, h2 em {
+    color: var(--lavender);
+    font-weight: 400;
+}
+
+.hero-copy {
+    max-width: 510px;
+
+    color: var(--muted);
+
+    font: 14px/1.9 Arial, sans-serif;
+}
+
+
+/* MOON */
+
+.hero-moon-wrap {
+    width: 300px;
+    height: 300px;
+
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    margin: 22px 0 12px;
+}
+
+.moon-halo {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    border-radius: 50%;
+
+    background: #c9c9ff12;
+
+    box-shadow:
+        0 0 55px 25px #aeb4ff12,
+        0 0 120px 45px #aeb4ff0a;
+}
+
+.hero-moon {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 34% 28%,
+            #fff 0%,
+            #e8e7f2 36%,
+            #b6b7cc 72%,
+            #777d9e 100%
+        );
+
+    box-shadow:
+        inset -20px -13px 35px #3c4263a8,
+        0 0 35px #e6e6ff50;
+}
+
+.crater {
+    position: absolute;
+    display: block;
+
+    border-radius: 50%;
+
+    background: #9298ad30;
+
+    box-shadow:
+        inset 3px 3px 7px #646b8540,
+        2px 2px 5px #fff4;
+}
+
+.crater-a {
+    width: 35px;
+    height: 28px;
+    top: 38px;
+    left: 48px;
+}
+
+.crater-b {
+    width: 24px;
+    height: 24px;
+    top: 92px;
+    left: 115px;
+}
+
+.crater-c {
+    width: 17px;
+    height: 17px;
+    top: 128px;
+    left: 66px;
+}
+
+.crater-d {
+    width: 12px;
+    height: 12px;
+    top: 58px;
+    left: 137px;
+}
+
+.crater-e {
+    width: 20px;
+    height: 17px;
+    top: 23px;
+    left: 112px;
+}
+
+.orbit-dot {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #fff;
+    box-shadow: 0 0 12px #fff;
+}
+
+.dot-a {
+    top: 34px;
+    right: 32px;
+}
+
+.dot-b {
+    bottom: 48px;
+    left: 30px;
+
+    width: 3px;
+    height: 3px;
+}
+
+.scroll-hint {
+    color: #8f91ad;
+
+    font: 9px Arial, sans-serif;
+    letter-spacing: .2em;
+
+    margin-top: 4px;
+}
+
+.scroll-hint span {
+    display: block;
+
+    color: var(--gold);
+    font-size: 18px;
+
+    margin-top: 12px;
+}
+
+
+/* PHASE SECTION */
+
+.phase-section {
+    padding: 85px 0 110px;
+
+    border-top: 1px solid #ffffff12;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 580px;
+
+    margin: 0 auto 48px;
+}
+
+.section-heading h2,
+.closing h2 {
+    font-size: clamp(34px, 5vw, 54px);
+    font-weight: 400;
+    line-height: 1.12;
+
+    margin: 18px 0;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font: 13px/1.8 Arial, sans-serif;
+}
+
+
+/* PHASE GRID */
+
+.phase-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 48px;
+    align-items: center;
+
+    max-width: 940px;
+    margin: auto;
+}
+
+.phase-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 13px;
+}
+
+.phase-choice {
+    min-height: 118px;
+
+    border: 1px solid #c9c2ed24;
+    border-radius: 13px;
+
+    color: var(--muted);
+    background: #ffffff06;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+    transition: .25s;
+
+    padding: 10px 4px;
+}
+
+.phase-choice:hover {
+    border-color: #d9d0ff88;
+    background: #ffffff0d;
+
+    transform: translateY(-3px);
+}
+
+.phase-choice.active {
+    border-color: #e4d8ad;
+
+    background: #f2d8a20e;
+
+    box-shadow: 0 0 25px #d8c7ff12;
+
+    color: var(--white);
+}
+
+.phase-choice span:last-child {
+    font: 9px Arial, sans-serif;
+    letter-spacing: .08em;
+    text-align: center;
+}
+
+.phase-icon {
+    width: 34px;
+    height: 34px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #20243b 0 50%,
+            #eeeaf8 50%
+        );
+
+    box-shadow: 0 0 15px #dcd8ff25;
+}
+
+.phase-choice:nth-child(1) .phase-icon {
+    background: #22263e;
+    border: 1px solid #7e829e55;
+}
+
+.phase-choice:nth-child(2) .phase-icon {
+    background:
+        linear-gradient(90deg, #22263e 0 72%, #e5e3f0 72%);
+}
+
+.phase-choice:nth-child(3) .phase-icon {
+    background:
+        linear-gradient(90deg, #22263e 0 50%, #e5e3f0 50%);
+}
+
+.phase-choice:nth-child(4) .phase-icon {
+    background:
+        linear-gradient(90deg, #22263e 0 27%, #e5e3f0 27%);
+}
+
+.phase-choice:nth-child(5) .phase-icon {
+    background: #e8e6f1;
+}
+
+.phase-choice:nth-child(6) .phase-icon {
+    background:
+        linear-gradient(90deg, #e5e3f0 0 72%, #22263e 72%);
+}
+
+.phase-choice:nth-child(7) .phase-icon {
+    background:
+        linear-gradient(90deg, #e5e3f0 0 50%, #22263e 50%);
+}
+
+.phase-choice:nth-child(8) .phase-icon {
+    background:
+        linear-gradient(90deg, #e5e3f0 0 27%, #22263e 27%);
+}
+
+
+/* PHASE MESSAGE CARD */
+
+.phase-card {
+    min-height: 420px;
+
+    padding: 34px 36px 25px;
+
+    border: 1px solid #d9d0ff2a;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(145deg, #ffffff0e, #ffffff04);
+
+    box-shadow: 0 22px 80px #0004;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.card-kicker {
+    color: var(--gold);
+
+    font: 9px Arial, sans-serif;
+    letter-spacing: .2em;
+}
+
+.card-moon {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    margin: 8px 0 20px;
+
+    background: #e9e7f1;
+
+    box-shadow: 0 0 30px #dedcff3a;
+}
+
+.card-moon.phase-0 {
+    background: #252942;
+    border: 1px solid #72789566;
+}
+
+.card-moon.phase-1 {
+    background:
+        linear-gradient(90deg, #252942 0 72%, #e9e7f1 72%);
+}
+
+.card-moon.phase-2 {
+    background:
+        linear-gradient(90deg, #252942 0 50%, #e9e7f1 50%);
+}
+
+.card-moon.phase-3 {
+    background:
+        linear-gradient(90deg, #252942 0 27%, #e9e7f1 27%);
+}
+
+.card-moon.phase-4 {
+    background: #e9e7f1;
+}
+
+.card-moon.phase-5 {
+    background:
+        linear-gradient(90deg, #e9e7f1 0 72%, #252942 72%);
+}
+
+.card-moon.phase-6 {
+    background:
+        linear-gradient(90deg, #e9e7f1 0 50%, #252942 50%);
+}
+
+.card-moon.phase-7 {
+    background:
+        linear-gradient(90deg, #e9e7f1 0 27%, #252942 27%);
+}
+
+.phase-card h3 {
+    font-size: 29px;
+    font-weight: 400;
+
+    margin: 0 0 8px;
+}
+
+.phase-subtitle {
+    color: var(--lavender);
+
+    font-size: 15px;
+    font-style: italic;
+
+    margin-bottom: 16px;
+}
+
+.phase-message {
+    color: #b6b7cc;
+
+    font: 13px/1.9 Arial, sans-serif;
+
+    max-width: 390px;
+    margin-bottom: 25px;
+}
+
+
+/* PREVIOUS / NEXT BUTTONS */
+
+.card-pagination {
+    margin-top: auto;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid #ffffff14;
+
+    padding-top: 17px;
+}
+
+.card-pagination button {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ffffff35;
+    background: transparent;
+
+    color: white;
+    cursor: pointer;
+}
+
+.card-pagination button:hover {
+    background: #ffffff18;
+}
+
+.card-pagination span {
+    color: #9698b1;
+
+    font: 10px Arial, sans-serif;
+    letter-spacing: .15em;
+}
+
+
+/* CLOSING SECTION */
+
+.closing {
+    text-align: center;
+
+    padding: 80px 0 90px;
+
+    border-top: 1px solid #ffffff12;
+}
+
+.closing-moon {
+    font-size: 64px;
+
+    color: var(--gold);
+
+    text-shadow: 0 0 35px #e5d7ff88;
+
+    margin-bottom: 20px;
+}
+
+.closing-message {
+    max-width: 610px;
+
+    margin: 22px auto;
+
+    color: var(--muted);
+
+    font: 14px/2 Arial, sans-serif;
+}
+
+.signature {
+    margin: 30px 0;
+
+    color: #c5c3d8;
+    font-style: italic;
+}
+
+.signature span {
+    color: var(--gold);
+}
+
+.closing-back {
+    margin-top: 12px;
+    padding: 13px 21px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 24px 0 30px;
+
+    border-top: 1px solid #ffffff12;
+
+    color: #777b99;
+
+    font: 9px Arial, sans-serif;
+    letter-spacing: .2em;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 760px) {
+
+    .moon-page {
+        width: min(100% - 30px, 560px);
+    }
+
+    .topbar-mark {
+        font-size: 8px;
+        letter-spacing: .12em;
+    }
+
+    .hero {
+        min-height: 620px;
+        padding-top: 65px;
+    }
+
+    .hero-moon-wrap {
+        transform: scale(.88);
+        margin: 5px 0;
+    }
+
+    .phase-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .phase-grid {
+        gap: 8px;
+    }
+
+    .phase-choice {
+        min-height: 94px;
+    }
+
+    .phase-choice span:last-child {
+        font-size: 8px;
+    }
+
+    .phase-card {
+        min-height: 390px;
+        padding: 28px 22px 20px;
+    }
+
+}
+
+
+@media (max-width: 390px) {
+
+    .back-button {
+        padding: 9px 11px;
+        font-size: 10px;
+    }
+
+    .topbar-mark {
+        letter-spacing: .06em;
+    }
+
+    .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .phase-choice {
+        min-height: 83px;
+    }
+
+    .phase-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+} 

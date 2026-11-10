@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#100d19">
+    <title>If We Were Together ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="imagine.css">
+</head>
+
+<body>
+
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+    <header>
+        <a href="../index.html#universeHub">✦ OUR LITTLE UNIVERSE</a>
+        <span>DESTINATION 07</span>
+    </header>
+
+    <main>
+
+        <!-- INTRODUCTION -->
+        <section class="hero" id="hero">
+
+            <p class="eyebrow">A LITTLE DAYDREAM FOR SANDHIYA</p>
+
+            <h1>
+                If We Were<br>
+                <em>Together</em>
+            </h1>
+
+            <p class="lead">
+                What if, just for a little while, distance didn't exist?
+                <br>
+                What would an ordinary day with us look like?
+            </p>
+
+            <button class="primary" id="begin">
+                LET'S IMAGINE <b>→</b>
+            </button>
+
+            <p class="foot">
+                30 little moments · one imagined life · just us
+            </p>
+
+        </section>
+
+
+        <!-- OUR MOMENTS -->
+        <section class="journey hidden" id="journey">
+
+            <p class="eyebrow">OUR DAYDREAM BEGINS</p>
+
+            <h2>
+                Not a perfect day.<br>
+                <em>Just a day with you.</em>
+            </h2>
+
+            <p class="intro">
+                Some moments would be exciting. Some would be wonderfully
+                ordinary. Those ordinary ones might become my favourites.
+            </p>
+
+            <!-- PROGRESS BAR -->
+            <div class="progress">
+
+                <div>
+                    <span id="progressText">0 of 30 moments explored</span>
+                    <span id="percent">0%</span>
+                </div>
+
+                <i>
+                    <b id="bar"></b>
+                </i>
+
+            </div>
+
+            <!-- CHAPTERS WILL BE ADDED BY JAVASCRIPT -->
+            <div id="chapters"></div>
+
+        </section>
+
+
+        <!-- FINAL MESSAGE -->
+        <section class="ending hidden" id="ending">
+
+            <div class="star">✧</div>
+
+            <p class="eyebrow">UNTIL THAT DAY</p>
+
+            <h2>
+                Maybe today<br>
+                we can only <em>imagine.</em>
+            </h2>
+
+            <p>
+                But someday, I hope these won't be scenes on a screen.
+                I hope they'll be our photographs, our silly stories,
+                our favourite places and our ordinary Tuesdays.
+            </p>
+
+            <blockquote>
+                I don't need every day to be extraordinary.
+                I just want the ordinary days to have you in them.
+            </blockquote>
+
+            <strong>
+                Until then, I'll keep choosing you. ❤️
+            </strong>
+
+            <button class="outline" id="replay">
+                REVISIT OUR DAYDREAM ↗
+            </button>
+
+            <a class="back" href="../index.html#universeHub">
+                ← Back to our universe
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- MOMENT POPUP -->
+    <div class="overlay hidden" id="overlay" role="dialog" aria-modal="true">
+
+        <div class="modal">
+
+            <button class="close" id="close" aria-label="Close">
+                ×
+            </button>
+
+            <div class="scene-art" id="sceneArt">
+                🌤️
+            </div>
+
+            <div class="modal-body">
+
+                <p class="eyebrow" id="chapterName"></p>
+
+                <small id="momentNumber"></small>
+
+                <h2 id="momentTitle"></h2>
+
+                <p class="description" id="description"></p>
+
+                <!-- INTERACTIVE CHOICES -->
+                <div id="choiceBox" class="choice hidden">
+
+                    <h3 id="question"></h3>
+
+                    <div id="options"></div>
+
+                    <p id="reply" class="reply hidden"></p>
+
+                </div>
+
+                <!-- NAVIGATION -->
+                <nav>
+
+                    <button class="previous" id="previous">
+                        ← PREVIOUS
+                    </button>
+
+                    <button class="primary next" id="next">
+                        NEXT MOMENT →
+                    </button>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        MADE WITH A LITTLE IMAGINATION & A LOT OF LOVE
+        <span>♥</span>
+    </footer>
+
+
+    <script src="imagine.js"></script>
+
+</body>
+</html>

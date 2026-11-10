@@ -1,0 +1,2262 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+overflow-y: auto;
+    background: linear-gradient(135deg, #090817, #17112f, #251735);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: #d7b8e8;
+    letter-spacing: 5px;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.celestial {
+    position: relative;
+    width: 180px;
+    height: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.sun {
+    font-size: 95px;
+    color: #ffd889;
+    text-shadow: 0 0 20px #ffcb70, 0 0 65px #ffad52;
+    animation: sunGlow 4s infinite alternate;
+}
+
+.orbit {
+    position: absolute;
+    width: 170px;
+    height: 110px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.moon {
+    position: absolute;
+    right: -14px;
+    top: 10px;
+    font-size: 43px;
+    color: #e5ddff;
+    text-shadow: 0 0 15px #b6a4ff, 0 0 35px #a18aff;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h1 span {
+    color: #e9c8ff;
+    font-style: italic;
+}
+
+.subtitle {
+    color: #c9bdd8;
+    font-size: 13px;
+    line-height: 2;
+    margin-top: 22px;
+    font-weight: 300;
+}
+
+.birthday {
+    margin-top: 28px;
+    color: #e7c7a0;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.enter-btn {
+    margin-top: 38px;
+    padding: 15px 32px;
+    border: 1px solid rgba(235,205,255,0.6);
+    border-radius: 40px;
+    background: rgba(255,255,255,0.07);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enter-btn:hover {
+    background: #e7c8ff;
+    color: #17112f;
+    box-shadow: 0 0 30px rgba(215,180,255,0.4);
+    transform: translateY(-4px);
+}
+
+.enter-btn span {
+    margin-left: 12px;
+}
+
+.footer-text {
+    position: absolute;
+    bottom: 25px;
+    color: #9b8eac;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.glow-one {
+    background: #b27bff;
+    top: -100px;
+    left: -100px;
+}
+
+.glow-two {
+    background: #ffbd80;
+    bottom: -150px;
+    right: -100px;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 70% 20%, white 50%, transparent 100%),
+        radial-gradient(1px 1px at 40% 70%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 85% 65%, white 50%, transparent 100%),
+        radial-gradient(1px 1px at 15% 85%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 55% 45%, white 50%, transparent 100%);
+    background-size: 350px 350px;
+    animation: twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+@keyframes sunGlow {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+@media (max-width: 600px) {
+    .eyebrow {
+        letter-spacing: 3px;
+        font-size: 9px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+    }
+
+    .celestial {
+        transform: scale(0.85);
+    }
+}
+
+/* BIRTHDAY CELEBRATION */
+
+.birthday-screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    animation: appear 1.2s ease;
+}
+
+.birthday-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 7vw, 75px);
+    margin-top: 25px;
+}
+
+.birthday-title span {
+    display: block;
+    color: #e9c8ff;
+    font-style: italic;
+}
+
+.birthday-subtitle {
+    color: #c9bdd8;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.cake-container {
+    margin-top: 45px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.cake {
+    font-size: 110px;
+    filter: drop-shadow(0 0 25px #ffb9d9);
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+.cake-container:hover {
+    transform: scale(1.1);
+}
+
+.cake-container p {
+    color: #e7c7ff;
+    font-size: 11px;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+.birthday-message {
+    display: none;
+    margin-top: 30px;
+    color: #ffd9a6;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    animation: appear 1s ease;
+}
+
+.birthday-screen .enter-btn {
+    margin-top: 35px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cakeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@media (max-width: 600px) {
+    .birthday-title {
+        font-size: 43px;
+    }
+
+    .cake {
+        font-size: 90px;
+    }
+}
+
+/* ELEGANT BIRTHDAY CAKE */
+
+.cake-container {
+    margin-top: 55px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.cake-scene {
+    width: 260px;
+    height: 210px;
+    position: relative;
+    margin: auto;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.25));
+}
+
+.cake-plate {
+    position: absolute;
+    width: 250px;
+    height: 17px;
+    bottom: 8px;
+    left: 5px;
+    background: linear-gradient(
+        to bottom,
+        #f5e5ff,
+        #b99bcf
+    );
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cake-layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px 12px 18px 18px;
+    background: linear-gradient(
+        135deg,
+        #f5c9e8,
+        #c99bdc,
+        #edc6ec
+    );
+    box-shadow: inset 0 -7px 10px rgba(100,50,120,0.15);
+}
+
+.layer-bottom {
+    width: 220px;
+    height: 65px;
+    bottom: 25px;
+}
+
+.layer-middle {
+    width: 180px;
+    height: 52px;
+    bottom: 88px;
+    background: linear-gradient(
+        135deg,
+        #e6c9fa,
+        #c8a6e8,
+        #f1d5f5
+    );
+}
+
+.layer-top {
+    width: 140px;
+    height: 43px;
+    bottom: 138px;
+    background: linear-gradient(
+        135deg,
+        #ffe1f1,
+        #d9b1e8,
+        #f8d7ed
+    );
+}
+
+.cake-top {
+    position: absolute;
+    width: 140px;
+    height: 22px;
+    bottom: 168px;
+    left: 60px;
+    border-radius: 50%;
+    background: #f7dafa;
+    box-shadow: 0 0 18px rgba(235,190,255,0.4);
+    z-index: 2;
+}
+
+.cake-layer::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 100%;
+    height: 18px;
+    border-radius: 50%;
+    background: #f8dafa;
+}
+
+.candle {
+    position: absolute;
+    z-index: 5;
+    width: 9px;
+    height: 37px;
+    bottom: 184px;
+    left: 126px;
+    background: repeating-linear-gradient(
+        135deg,
+        #fff0d8 0px,
+        #fff0d8 4px,
+        #c9a8ed 4px,
+        #c9a8ed 7px
+    );
+    border-radius: 3px;
+}
+
+.flame {
+    position: absolute;
+    width: 13px;
+    height: 20px;
+    background: radial-gradient(
+        ellipse at center,
+        #fff9ce 10%,
+        #ffd27a 50%,
+        #ff9e65 100%
+    );
+    border-radius: 50% 50% 45% 45%;
+    top: -22px;
+    left: -2px;
+    box-shadow: 0 0 15px #ffd27a,
+                0 0 30px #ffb56d;
+    animation: flicker 0.8s infinite alternate;
+    transform-origin: bottom center;
+}
+
+@keyframes flicker {
+    from {
+        transform: rotate(-5deg) scale(1);
+    }
+    to {
+        transform: rotate(5deg) scale(1.12);
+    }
+}
+
+.cake-container:hover .cake-scene {
+    transform: translateY(-8px);
+    transition: 0.4s;
+}
+/* BIRTHDAY SCREEN LAYOUT FIX */
+
+.birthday-screen {
+    min-height: 100vh;
+    padding: 35px 25px 45px;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.birthday-screen .eyebrow {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.birthday-screen .birthday-title {
+    margin-top: 10px;
+    font-size: clamp(38px, 6vw, 65px);
+}
+
+.birthday-screen .birthday-subtitle {
+    margin-top: 12px;
+}
+
+.birthday-screen .cake-container {
+    margin-top: 20px;
+}
+
+.birthday-screen .cake-scene {
+    transform: scale(0.85);
+}
+
+.birthday-screen .birthday-message {
+    max-width: 720px;
+    margin: 15px auto 0;
+    padding: 0 15px;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.birthday-screen .enter-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .birthday-screen {
+        padding: 25px 15px 35px;
+    }
+
+    .birthday-screen .birthday-message {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .birthday-screen .cake-scene {
+        transform: scale(0.75);
+    }
+}.cake-container p {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #e9c8ff;
+    margin-top: 18px;
+    font-weight: 400;
+    text-shadow: 0 0 12px rgba(220, 180, 255, 0.4);
+}
+/* FINAL SCREEN */
+
+.final-screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    animation: appear 1.2s ease;
+}
+
+.final-screen h1 {
+    margin-top: 25px;
+}
+
+.final-screen h1 span {
+    display: block;
+    color: #e9c8ff;
+    font-style: italic;
+}
+
+.final-screen .subtitle {
+    max-width: 500px;
+}
+
+.final-screen .enter-btn {
+    margin-top: 40px;
+}
+.continue-btn {
+    display: none;
+    margin: 30px auto 40px;
+    animation: appear 1s ease;
+}
+
+.continue-btn.show {
+    display: inline-block;
+}
+
+
+/* =================================
+   CELESTIAL ATLAS
+================================= */
+
+.universe-hub {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+    z-index: 3;
+    padding: 55px 5% 30px;
+    background:
+        radial-gradient(ellipse at 50% 45%,
+        rgba(35, 42, 72, 0.28),
+        transparent 65%);
+    flex-direction: column;
+    align-items: center;
+    animation: appear 1s ease;
+    overflow: hidden;
+}
+
+.atlas-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.atlas-header .eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #bba5d4;
+    margin-bottom: 18px;
+}
+
+.atlas-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 68px);
+    font-weight: 400;
+}
+
+.atlas-header h1 span {
+    color: #dfc0f6;
+    font-style: italic;
+}
+
+.atlas-header > p:last-child {
+    font-size: 12px;
+    color: #a99ebd;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* MAIN LAYOUT */
+
+.atlas-layout {
+    width: 100%;
+    max-width: 1250px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(260px, 0.8fr);
+    gap: 30px;
+    align-items: center;
+}
+
+/* STAR MAP */
+
+.star-map {
+    position: relative;
+    width: 100%;
+    height: 590px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 45% 45%,
+        rgba(46, 48, 79, 0.15),
+        transparent 70%);
+    border: 1px solid rgba(210, 190, 240, 0.09);
+    border-radius: 16px;
+}
+
+.constellation-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.main-lines path {
+    fill: none;
+    stroke: rgba(205, 185, 231, 0.32);
+    stroke-width: 1.1;
+}
+
+.secondary-lines path {
+    fill: none;
+    stroke: rgba(205, 185, 231, 0.13);
+    stroke-width: 0.8;
+    stroke-dasharray: 3 5;
+}
+
+.map-coordinate {
+    position: absolute;
+    color: rgba(205, 190, 225, 0.45);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.coordinate-one {
+    top: 18px;
+    left: 20px;
+}
+
+.coordinate-two {
+    bottom: 18px;
+    right: 20px;
+}
+
+/* STARS */
+
+.star-point {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%, -50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 4;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.star-core {
+    width: 9px;
+    height: 9px;
+    display: block;
+    border-radius: 50%;
+    background: #f4e5ff;
+    box-shadow:
+        0 0 7px #e9d1ff,
+        0 0 18px rgba(218, 185, 255, 0.9);
+    transition: 0.3s;
+}
+
+.star-label {
+    position: absolute;
+    top: 25px;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.6px;
+    color: rgba(222, 206, 239, 0.75);
+    transition: 0.3s;
+}
+
+.star-point:hover .star-core,
+.star-point.active .star-core {
+    transform: scale(1.9);
+    background: #ffe4a9;
+    box-shadow:
+        0 0 12px #ffdb9a,
+        0 0 30px #e6b978;
+}
+
+.star-point:hover .star-label,
+.star-point.active .star-label {
+    color: #ffe0ad;
+}
+
+.star-point.active::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 222, 170, 0.45);
+    border-radius: 50%;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* CENTER */
+
+.map-center {
+    position: absolute;
+    left: 47%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 223, 179, 0.75);
+    font-size: 8px;
+    letter-spacing: 3px;
+    z-index: 2;
+}
+
+.center-orbit {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border: 1px solid rgba(230, 210, 245, 0.15);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.center-orbit::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed rgba(230, 210, 245, 0.14);
+    border-radius: 50%;
+}
+
+.map-caption {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(200, 180, 225, 0.55);
+}
+
+/* INFORMATION PANEL */
+
+.destination-panel {
+    position: relative;
+    min-height: 300px;
+    padding: 30px 25px;
+    border: 1px solid rgba(218, 192, 241, 0.2);
+    border-radius: 12px;
+    background: rgba(17, 15, 32, 0.86);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(18px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.panel-close {
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    border: none;
+    background: transparent;
+    color: #bba8ce;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.panel-number {
+    color: #d7b8e8;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.destination-panel h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #f5edff;
+}
+
+.destination-panel h2 span {
+    display: block;
+    color: #dcbaf1;
+    font-style: italic;
+}
+
+.panel-description {
+    margin-top: 20px;
+    color: #b9afc8;
+    font-size: 11px;
+    line-height: 2;
+    white-space: pre-line;
+}
+
+.panel-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(220, 195, 240, 0.16);
+    margin: 25px 0;
+}
+
+.panel-enter {
+    padding: 13px 16px;
+    width: 100%;
+    background: rgba(221, 194, 245, 0.1);
+    border: 1px solid rgba(221, 194, 245, 0.4);
+    border-radius: 5px;
+    color: #eee0ff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.panel-enter:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.panel-enter:not(:disabled):hover {
+    background: rgba(221, 194, 245, 0.2);
+}
+
+.panel-footer {
+    margin-top: 25px;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #81758f;
+    text-align: center;
+}
+
+/* FOOTER */
+
+.atlas-footer {
+    width: 100%;
+    max-width: 1250px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    color: #8e809e;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .atlas-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .star-map {
+        height: 520px;
+    }
+
+    .destination-panel {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .universe-hub {
+        padding: 40px 14px 25px;
+    }
+
+    .atlas-header {
+        margin-bottom: 20px;
+    }
+
+    .star-map {
+        height: 440px;
+    }
+
+    .star-label {
+        font-size: 6px;
+        letter-spacing: 0.8px;
+    }
+
+    .star-point {
+        padding: 8px;
+    }
+
+    .destination-panel h2 {
+        font-size: 31px;
+    }
+
+    .atlas-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+}
+@keyframes panelUpdate {
+    from {
+        opacity: 0.3;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-update {
+    animation: panelUpdate 0.35s ease;
+}
+
+/* =================================
+   THE SUN AND MOON ORBIT
+================================= */
+
+.map-center {
+    position: absolute;
+    left: 47%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.celestial-system {
+    position: relative;
+    width: 190px;
+    height: 190px;
+}
+
+/* ORBIT PATH */
+
+.celestial-orbit {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(225, 211, 245, 0.22);
+    border-radius: 50%;
+    animation: celestialRotation 24s linear infinite;
+}
+
+/* SUN */
+
+.orbit-sun {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 32% 28%,
+        #fff8d8 0%,
+        #ffe6a0 22%,
+        #ffc45d 55%,
+        #e88b32 100%);
+
+    box-shadow:
+        0 0 15px rgba(255, 207, 112, 0.9),
+        0 0 35px rgba(255, 177, 73, 0.65),
+        0 0 65px rgba(255, 158, 55, 0.3);
+}
+
+/* MOON */
+
+.orbit-moon {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 32% 30%,
+        #ffffff 0%,
+        #e9e7f5 40%,
+        #b5b3ca 75%,
+        #77748f 100%);
+
+    box-shadow:
+        0 0 12px rgba(220, 218, 255, 0.8),
+        0 0 30px rgba(195, 185, 255, 0.35);
+}
+
+/* MOON SHADOW */
+
+.orbit-moon::after {
+    content: "";
+    position: absolute;
+
+    width: 36px;
+    height: 36px;
+
+    top: -3px;
+    left: 11px;
+
+    border-radius: 50%;
+
+    background: #171329;
+
+    box-shadow: -4px 0 8px rgba(10, 8, 25, 0.2);
+}
+
+/* ORBIT ANIMATION */
+
+@keyframes celestialRotation {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+/* CENTRE LABEL */
+
+.center-label {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: rgba(239, 220, 255, 0.75);
+
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* MOBILE SIZE */
+
+@media (max-width: 550px) {
+
+    .celestial-system {
+        width: 145px;
+        height: 145px;
+    }
+
+    .orbit-sun {
+        width: 37px;
+        height: 37px;
+        top: -18px;
+    }
+
+    .orbit-moon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(0 0 8px rgba(225, 220, 255, 0.8))
+        drop-shadow(0 0 22px rgba(195, 185, 255, 0.4));
+}
+
+}
+
+/* =================================
+   REALISTIC ASTRONOMICAL BACKGROUND
+================================= */
+
+.star-map {
+    background-color: #080d1b;
+    isolation: isolate;
+}
+
+/* DISTANT STAR FIELD */
+
+.map-stars {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(1px 1px at 10% 15%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 20% 75%, #d9d5ff 99%, transparent),
+        radial-gradient(1.5px 1.5px at 35% 30%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 48% 80%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 60% 12%, #d9d5ff 99%, transparent),
+        radial-gradient(1.5px 1.5px at 75% 45%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 90% 20%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 85% 85%, #d9d5ff 99%, transparent),
+        radial-gradient(1px 1px at 5% 55%, #fff 99%, transparent),
+        radial-gradient(1px 1px at 55% 55%, #fff 99%, transparent);
+
+    background-size: 350px 280px;
+    animation: starDrift 100s linear infinite;
+}
+
+/* SOFT NEBULA CLOUDS */
+
+.nebula {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(55px);
+    opacity: 0.12;
+}
+
+.nebula-one {
+    width: 250px;
+    height: 180px;
+    top: 15%;
+    left: 20%;
+    background: #66518f;
+}
+
+.nebula-two {
+    width: 280px;
+    height: 200px;
+    bottom: 5%;
+    right: 8%;
+    background: #465c91;
+}
+
+/* KEEP MAP CONTENT ABOVE BACKGROUND */
+
+.constellation-lines,
+.star-point,
+.map-center,
+.map-coordinate,
+.map-caption {
+    z-index: 2;
+}
+
+@keyframes starDrift {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 350px 280px;
+    }
+}
+/* =================================
+   THE LAST TRAIN HOME
+================================= */
+
+.story-screen {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+    background: #080d18;
+    color: #f5edf2;
+    padding: 25px 5% 50px;
+    animation: appear 1s ease;
+}
+
+.story-background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(80, 91, 130, 0.18), transparent 50%),
+        radial-gradient(ellipse at 85% 80%, rgba(180, 111, 83, 0.12), transparent 45%);
+}
+
+.story-header {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: #a99eae;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.story-back {
+    background: transparent;
+    border: 1px solid rgba(230, 210, 230, 0.25);
+    border-radius: 30px;
+    padding: 10px 17px;
+    color: #e8d9e9;
+    font: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.story-back:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.story-container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.story-image {
+    position: relative;
+    width: 100%;
+    height: clamp(220px, 38vw, 390px);
+    border-radius: 12px;
+    overflow: hidden;
+    background:
+        linear-gradient(to top, rgba(4, 8, 17, 0.85), transparent 65%),
+        url("https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1600&q=85")
+        center 55% / cover;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    transition: background-image 0.5s ease;
+}
+
+.story-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(4,8,17,0.65), transparent 65%);
+}
+
+.story-image span {
+    position: absolute;
+    bottom: 22px;
+    left: 25px;
+    color: #f0d6bd;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.story-content {
+    max-width: 700px;
+    margin: 45px auto 0;
+}
+
+.story-scene-label {
+    color: #d4ad91;
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.story-content h1 {
+    font-size: clamp(36px, 6vw, 58px);
+    color: #f6e9e5;
+}
+
+.story-divider {
+    width: 65px;
+    height: 1px;
+    background: #bd987f;
+    margin: 25px 0;
+}
+
+.story-narrative {
+    color: #c7bec8;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.story-dialogue {
+    margin-top: 25px;
+    padding: 20px 23px;
+    border-left: 2px solid #c99d82;
+    background: rgba(255,255,255,0.035);
+    color: #f1d8c8;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.story-choice-heading {
+    margin-top: 38px;
+    margin-bottom: 17px;
+    color: #d4ad91;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.story-choices {
+    display: grid;
+    gap: 12px;
+}
+
+.story-choice {
+    width: 100%;
+    padding: 17px 20px;
+    text-align: left;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(225,205,205,0.16);
+    border-radius: 7px;
+    color: #e9dfe5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.story-choice:hover {
+    border-color: #c99d82;
+    background: rgba(201,157,130,0.12);
+    transform: translateX(5px);
+}
+
+.story-footer {
+    margin-top: 55px;
+    text-align: center;
+    color: #746c7c;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
+    .story-screen {
+        padding: 20px 16px 40px;
+    }
+
+    .story-header {
+        flex-wrap: wrap;
+        font-size: 8px;
+    }
+
+    .story-image {
+        height: 230px;
+    }
+
+    .story-content {
+        margin-top: 30px;
+    }
+
+    .story-narrative {
+        font-size: 19px;
+    }
+
+    .story-dialogue {
+        font-size: 20px;
+    }
+
+    .story-choice {
+        padding: 15px;
+    }
+}
+/* MULTIVERSE INTRODUCTION */
+
+.multiverse-intro {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    padding: 65px 20px;
+    background:
+        radial-gradient(ellipse at 50% 35%, rgba(90, 75, 140, 0.2), transparent 65%),
+        linear-gradient(145deg, #080817, #151329, #090d1c);
+    text-align: center;
+    animation: appear 1.2s ease;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: auto;
+}
+
+.intro-content .eyebrow {
+    margin-bottom: 35px;
+}
+
+.intro-content h1 {
+    font-size: clamp(42px, 7vw, 70px);
+    line-height: 1.1;
+}
+
+.intro-content h1 span {
+    color: #e9c8ff;
+    font-style: italic;
+}
+
+.intro-divider {
+    width: 65px;
+    height: 1px;
+    background: #d7b8e8;
+    margin: 35px auto;
+}
+
+.intro-content > p:not(.eyebrow) {
+    color: #c9bdd8;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.8;
+    margin: 17px auto;
+}
+
+.intro-content h2 {
+    margin-top: 45px;
+    color: #e7c7a0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.intro-content .intro-final {
+    margin-top: 20px;
+    font-size: clamp(35px, 6vw, 55px);
+}
+
+.intro-content .enter-btn {
+    margin-top: 35px;
+}
+
+@media (max-width: 600px) {
+    .multiverse-intro {
+        padding: 45px 20px;
+    }
+
+    .intro-content > p:not(.eyebrow) {
+        font-size: 18px;
+    }
+}
+/* =================================
+   CHOOSE YOUR UNIVERSE
+================================= */
+
+.universe-choices {
+    display: none;
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 7%;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 0%, #302044 0%, transparent 60%),
+        linear-gradient(135deg, #100e20, #1c1230, #0b1020);
+    color: #fff;
+    text-align: center;
+}
+
+.universe-choices-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.universe-choices .eyebrow {
+    color: #d9b5f5;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.universe-choices h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.universe-subtitle {
+    max-width: 650px;
+    margin: 0 auto 65px;
+    color: #c5bbd2;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.universe-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.universe-card {
+    position: relative;
+    min-height: 260px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    cursor: pointer;
+
+    background: linear-gradient(
+        145deg,
+        rgba(85, 61, 112, 0.35),
+        rgba(22, 19, 42, 0.85)
+    );
+
+    border: 1px solid rgba(220, 190, 255, 0.22);
+    border-radius: 18px;
+
+    transition: all 0.35s ease;
+}
+
+.universe-card:hover {
+    transform: translateY(-8px);
+    border-color: #d9b5f5;
+    background: linear-gradient(
+        145deg,
+        rgba(112, 78, 145, 0.55),
+        rgba(31, 23, 54, 0.95)
+    );
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.universe-number {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: rgba(226, 199, 255, 0.55);
+    font-family: Georgia, serif;
+    font-size: 38px;
+}
+
+.universe-card h2 {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.universe-card p {
+    color: #c9bfd5;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.universe-explore {
+    color: #e1bdf8;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.universe-choices-footer {
+    margin-top: 60px;
+    color: #a99ab9;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+@media (max-width: 700px) {
+    .universe-choices {
+        padding: 75px 6%;
+    }
+
+    .universe-choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .universe-card {
+        min-height: 220px;
+        padding: 28px;
+    }
+}
+/* PREVIOUS STORY SCENE BUTTON */
+
+.story-previous {
+    background: rgba(217, 181, 245, 0.08);
+    border: 1px solid rgba(217, 181, 245, 0.35);
+    color: #e1c5f5;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.story-previous:hover {
+    background: rgba(217, 181, 245, 0.2);
+    border-color: #e1c5f5;
+    transform: translateX(-3px);
+}
+
+.story-previous:active {
+    transform: scale(0.96);
+}
+
+/* ===================================
+   THE SEVEN KEYS TREASURE HUNT
+=================================== */
+
+.treasure-screen {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding: 35px 20px 50px;
+    color: #f7edda;
+    background:
+        radial-gradient(ellipse at 50% 10%, rgba(174, 130, 72, 0.16), transparent 45%),
+        linear-gradient(145deg, #101321, #17182a 55%, #101321);
+}
+
+.treasure-stars {
+    position: absolute;
+    top: 110px;
+    right: 8%;
+    color: rgba(226, 192, 130, 0.25);
+    font-size: 30px;
+    letter-spacing: 18px;
+    pointer-events: none;
+}
+
+.treasure-header {
+    max-width: 1050px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.treasure-header > p,
+.treasure-eyebrow {
+    color: #d9b979;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.treasure-back {
+    background: transparent;
+    color: #e8d8ba;
+    border: 1px solid rgba(217, 185, 121, 0.35);
+    border-radius: 30px;
+    padding: 11px 18px;
+    cursor: pointer;
+}
+
+.treasure-container {
+    max-width: 760px;
+    margin: 65px auto 0;
+}
+
+.treasure-intro {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.treasure-intro h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 7vw, 68px);
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.treasure-intro h1 span,
+.marriage-certificate h2 span {
+    color: #d9b979;
+    display: block;
+    font-style: italic;
+}
+
+.treasure-intro > p {
+    color: #b9b4b1;
+    line-height: 1.8;
+    max-width: 470px;
+    margin: auto;
+}
+
+.treasure-progress-card,
+.treasure-clue-card,
+.treasure-complete {
+    border: 1px solid rgba(217, 185, 121, 0.23);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 25px;
+    margin-bottom: 22px;
+    backdrop-filter: blur(12px);
+}
+
+.treasure-progress-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #c9c0b4;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.treasure-progress-top strong {
+    color: #e8c77f;
+}
+
+.treasure-progress-track {
+    height: 5px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 17px 0 22px;
+    overflow: hidden;
+}
+
+#treasureProgressBar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #b78a49, #f2d69b);
+    transition: width 0.5s ease;
+}
+
+.treasure-key-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.treasure-key {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 17px;
+}
+
+.treasure-key.locked {
+    color: #77727a;
+    border: 1px dashed rgba(255,255,255,0.2);
+}
+
+.treasure-key.unlocked {
+    color: #201a12;
+    background: linear-gradient(145deg, #f4d89c, #b88742);
+    box-shadow: 0 0 16px rgba(217,185,121,0.3);
+}
+
+.treasure-clue-card {
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.treasure-sunmoon {
+    color: #e5bd74;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.treasure-sunmoon span {
+    color: #d6d9ee;
+    margin-left: 10px;
+}
+
+.clue-number {
+    color: #d9b979;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.treasure-clue-card h2,
+.treasure-complete h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.clue-question {
+    color: #d1c9c0;
+    line-height: 1.9;
+    white-space: pre-line;
+    max-width: 510px;
+    margin: 20px auto 28px;
+}
+
+#treasureAnswerForm {
+    max-width: 430px;
+    margin: auto;
+}
+
+#clueAnswer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 18px;
+    border: 1px solid rgba(217,185,121,0.35);
+    border-radius: 9px;
+    background: rgba(0,0,0,0.2);
+    color: #fff4e2;
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+#clueAnswer:focus {
+    border-color: #e5bd74;
+}
+
+.treasure-submit {
+    margin-top: 16px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    color: #211a12;
+    background: linear-gradient(120deg, #e8c987, #c49a58);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.treasure-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(217,185,121,0.2);
+}
+
+.clue-feedback {
+    min-height: 24px;
+    margin: 16px 0 0;
+    color: #e9c77f;
+    font-size: 13px;
+}
+
+.treasure-hint {
+    color: #89858d;
+    font-size: 11px;
+    margin-top: 25px;
+}
+
+.treasure-complete {
+    text-align: center;
+    padding: 45px 25px;
+}
+
+.chest-symbol {
+    color: #e9c77f;
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.treasure-complete > p:not(.treasure-eyebrow) {
+    color: #c7c0b8;
+    line-height: 1.8;
+}
+
+/* CERTIFICATE */
+
+.marriage-certificate {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 55px 35px 35px;
+    text-align: center;
+    color: #4a3c2c;
+    background: #f4eddd;
+    border: 8px double #c6a66d;
+    outline: 1px solid #c6a66d;
+    outline-offset: 5px;
+    margin: 35px 6px;
+    box-shadow: 0 15px 60px rgba(0,0,0,0.35);
+}
+
+.certificate-sun {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    color: #bd9653;
+    font-size: 35px;
+}
+
+.certificate-moon {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    color: #7b83a5;
+    font-size: 35px;
+}
+
+.certificate-kicker,
+.certificate-date span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #9c7847;
+}
+
+.marriage-certificate h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 400;
+    line-height: 1.35;
+    margin: 18px 0;
+}
+
+.marriage-certificate h2 span {
+    color: #9d7b4a;
+}
+
+.certificate-divider {
+    color: #b28b53;
+    letter-spacing: 8px;
+    margin: 22px 0;
+}
+
+.certificate-intro {
+    max-width: 430px;
+    margin: auto;
+    line-height: 1.8;
+    color: #746653;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.certificate-names {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(30px, 6vw, 48px);
+    color: #5a5067;
+    margin: 25px 0;
+}
+
+.certificate-names span {
+    color: #b28b53;
+    font-style: italic;
+}
+
+.certificate-message {
+    max-width: 430px;
+    margin: 0 auto 30px;
+    white-space: pre-line;
+    line-height: 2;
+    color: #746653;
+    font-family: Georgia, serif;
+}
+
+.certificate-date {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.certificate-date strong {
+    color: #8d6d42;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.certificate-signatures {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin: 35px 0;
+}
+
+.certificate-signatures span {
+    color: #a88a58;
+    font-size: 25px;
+}
+
+.certificate-signatures p {
+    border-top: 1px solid #bca77f;
+    padding: 10px 20px 0;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.certificate-footer {
+    color: #9b825c;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+}
+
+.certificate-restart {
+    color: #fff4e2;
+    background: #51475e;
+}
+
+.treasure-footer {
+    text-align: center;
+    color: #77727d;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 55px;
+}
+
+@media (max-width: 600px) {
+    .treasure-screen {
+        padding: 22px 14px 35px;
+    }
+
+    .treasure-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .treasure-container {
+        margin-top: 42px;
+    }
+
+    .treasure-progress-card,
+    .treasure-clue-card {
+        padding: 22px 16px;
+    }
+
+    .treasure-key {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .marriage-certificate {
+        padding: 50px 15px 25px;
+    }
+
+    .certificate-signatures {
+        gap: 20px;
+    }
+}
+/* =================================
+   STAR EXPLORER
+================================= */
+
+.star-explorer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 50%, #171a3c, #080817 75%);
+    z-index: 100;
+    color: white;
+}
+
+#spaceCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+.star-explorer-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+.star-explorer-content button {
+    pointer-events: auto;
+}
+
+.star-explorer-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.star-explorer-header > p {
+    color: #c9b8e7;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-align: right;
+}
+
+.star-back {
+    border: 1px solid rgba(230,210,255,0.3);
+    background: rgba(255,255,255,0.06);
+    color: white;
+    padding: 11px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.star-back:hover {
+    background: rgba(220,190,255,0.2);
+}
+
+.star-explorer-title {
+    text-align: center;
+    margin-top: 45px;
+    max-width: 600px;
+}
+
+.star-explorer-title .eyebrow {
+    margin-bottom: 18px;
+}
+
+.star-explorer-title h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 75px);
+}
+
+.star-explorer-title h1 span {
+    color: #e4c4ff;
+    font-style: italic;
+}
+
+.star-explorer-title > p:last-child {
+    margin-top: 15px;
+    color: #c1b7d1;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.star-instructions {
+    margin-top: 25px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #c9b8e7;
+    text-align: center;
+}
+
+.star-instructions span {
+    color: #ffe2a8;
+}
+
+.star-message {
+    display: none;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(390px, 88%);
+    padding: 35px 28px;
+    text-align: center;
+    background: rgba(19, 17, 43, 0.94);
+    border: 1px solid rgba(225,200,255,0.35);
+    border-radius: 16px;
+    box-shadow: 0 0 60px rgba(165,130,255,0.2);
+    pointer-events: auto;
+    animation: appear 0.4s ease;
+}
+
+.star-message-close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: #d7c6ec;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.message-star {
+    font-size: 35px;
+    color: #ffe0a3;
+    text-shadow: 0 0 20px #ffcf83;
+}
+
+.star-message > p {
+    margin-top: 15px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #c6addf;
+}
+
+.star-message h2 {
+    margin-top: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #fff0d8;
+}
+
+.message-decoration {
+    display: block;
+    margin-top: 25px;
+    color: #e7c7ff;
+    letter-spacing: 8px;
+}
+
+.star-explorer-footer {
+    position: absolute;
+    bottom: 25px;
+    color: #9184a8;
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+@media(max-width: 600px) {
+    .star-explorer-content {
+        padding: 18px;
+    }
+
+    .star-explorer-header > p {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .star-explorer-title {
+        margin-top: 65px;
+    }
+
+    .star-instructions {
+        font-size: 9px;
+        line-height: 1.7;
+    }
+
+    .star-message h2 {
+        font-size: 23px;
+    }
+}

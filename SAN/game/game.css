@@ -1,0 +1,349 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 0%, #342052 0%, transparent 55%),
+        #100b20;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+}
+
+#game-container {
+    width: min(1100px, 100%);
+    position: relative;
+}
+
+.hud {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 24px;
+    background: linear-gradient(110deg, #251638, #1b142d);
+    border: 1px solid #76549b;
+    border-bottom: 0;
+    border-radius: 16px 16px 0 0;
+}
+
+.hud-player,
+.hud-score {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hud-label {
+    color: #bda6d1;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+#lives {
+    font-size: 22px;
+    letter-spacing: 3px;
+    min-height: 26px;
+}
+
+#score {
+    color: #ffdf91;
+    font-size: 20px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+button {
+    border: 1px solid #b995db;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #745092, #52366f);
+    color: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 19px;
+    cursor: pointer;
+    transition: transform .2s, background .2s, box-shadow .2s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #9167b2, #67458d);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px #9c67c644;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+#pause-btn {
+    padding: 8px 15px;
+    font-size: 19px;
+}
+
+.game-stage {
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid #76549b;
+    border-right: 1px solid #76549b;
+    background: #160e30;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #1b1239;
+}
+
+#game-message {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffe6ac;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-shadow: 0 2px 8px #10071d;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #0e0920c9;
+    backdrop-filter: blur(7px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.panel {
+    width: min(480px, 95%);
+    padding: 38px 30px;
+    text-align: center;
+    border: 1px solid #c5a36f;
+    border-radius: 18px;
+    background:
+        radial-gradient(ellipse at top, #53376d, transparent 75%),
+        linear-gradient(145deg, #30203f, #181329);
+    box-shadow:
+        0 0 50px #b17ae533,
+        inset 0 0 25px #ffffff08;
+    animation: panelAppear .6s ease both;
+}
+
+@keyframes panelAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.panel-symbol {
+    color: #ffdb9a;
+    font-size: 38px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px #ffdc8a;
+}
+
+.eyebrow {
+    color: #c6a4d8;
+    font-size: 9px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.panel h1 {
+    color: #fff4e7;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(31px, 5vw, 46px);
+    line-height: 1.15;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.panel h1 span {
+    color: #d9b4f1;
+    font-style: italic;
+}
+
+.panel p:not(.eyebrow) {
+    color: #d6c8df;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.panel .forever {
+    color: #ffdfa4 !important;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 18px !important;
+}
+
+.panel button {
+    margin-top: 14px;
+    min-width: 205px;
+    padding: 14px 20px;
+    border-color: #d5b77e;
+    background: linear-gradient(120deg, #76528e, #54366e);
+}
+
+.panel button span {
+    margin-left: 12px;
+}
+
+.panel small {
+    display: block;
+    margin-top: 22px;
+    color: #a995b9;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.ending-panel {
+    border-color: #e1bb81;
+    box-shadow: 0 0 65px #d79bff55;
+}
+
+.mobile-controls {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background: #211633;
+    border: 1px solid #76549b;
+    border-top: 0;
+}
+
+.mobile-controls div {
+    display: flex;
+    gap: 12px;
+}
+
+.mobile-controls button {
+    width: 60px;
+    height: 52px;
+    font-size: 22px;
+    padding: 5px;
+    touch-action: none;
+    user-select: none;
+}
+
+#jump-btn {
+    width: 75px;
+    background: linear-gradient(135deg, #9669a9, #63427f);
+}
+
+.game-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 4px;
+    color: #8e7b9e;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    #game-container {
+        width: 100%;
+    }
+
+    .hud {
+        min-height: 62px;
+        padding: 9px 12px;
+        border-radius: 0;
+    }
+
+    .hud-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    #lives {
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+
+    #score {
+        font-size: 17px;
+    }
+
+    .game-stage {
+        border-left: 0;
+        border-right: 0;
+    }
+
+    #game-message {
+        font-size: 11px;
+        top: 9px;
+    }
+
+    .mobile-controls {
+        display: flex;
+    }
+
+    .game-footer {
+        padding: 14px 10px;
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .panel {
+        padding: 27px 19px;
+    }
+}
+
+@media (max-width: 360px) {
+    .game-footer {
+        font-size: 6px;
+    }
+
+    .hud {
+        gap: 6px;
+    }
+}
+.hud-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#back-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+}

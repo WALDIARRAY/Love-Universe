@@ -1,0 +1,681 @@
+
+/* =================================
+   1. GLOBAL SETTINGS
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #100d19;
+    --pink: #e9a9bd;
+    --gold: #d8bd91;
+    --muted: #b8aebe;
+    --line: rgba(255, 255, 255, 0.13);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #f7f0e9;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =================================
+   2. BACKGROUND EFFECTS
+================================= */
+
+.glow {
+    position: fixed;
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.14;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow1 {
+    background: #a64f7c;
+    top: -180px;
+    left: -170px;
+}
+
+.glow2 {
+    background: #61539c;
+    right: -200px;
+    bottom: -180px;
+}
+
+
+/* =================================
+   3. HEADER
+================================= */
+
+header {
+    height: 70px;
+    padding: 0 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    font-size: 10px;
+    letter-spacing: 0.18em;
+}
+
+header a {
+    color: #e8d9d8;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+header span {
+    color: #998c9d;
+}
+
+
+/* =================================
+   4. HERO SECTION
+================================= */
+
+.hero {
+    min-height: calc(100svh - 70px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 70px 20px;
+
+    position: relative;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: clamp(68px, 11vw, 140px);
+    line-height: 0.8;
+    letter-spacing: -0.045em;
+    margin: 28px 0;
+}
+
+h1 em,
+h2 em {
+    color: var(--pink);
+    font-weight: 400;
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.foot {
+    margin-top: 25px;
+    color: #837a8d;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+}
+
+
+/* =================================
+   5. BUTTONS
+================================= */
+
+.primary {
+    border: none;
+    border-radius: 3px;
+
+    padding: 16px 23px;
+
+    background: var(--pink);
+    color: #241521;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+
+    margin-top: 25px;
+
+    transition: 0.2s;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+    background: #f3c1d0;
+}
+
+.primary b {
+    margin-left: 12px;
+    font-size: 16px;
+}
+
+
+/* =================================
+   6. HIDDEN ELEMENTS
+================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =================================
+   7. JOURNEY SECTION
+================================= */
+
+.journey {
+    max-width: 1120px;
+    margin: auto;
+    padding: 100px 26px 120px;
+}
+
+.journey h2,
+.ending h2 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.95;
+    margin: 18px 0;
+}
+
+.intro {
+    max-width: 570px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =================================
+   8. PROGRESS BAR
+================================= */
+
+.progress {
+    max-width: 520px;
+    margin: 40px 0 60px;
+}
+
+.progress div {
+    display: flex;
+    justify-content: space-between;
+
+    color: #b9adbd;
+    font-size: 10px;
+
+    margin-bottom: 10px;
+}
+
+.progress i {
+    height: 3px;
+    display: block;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.progress i b {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--pink);
+    transition: width 0.3s;
+}
+
+
+/* =================================
+   9. CHAPTERS
+================================= */
+
+.chapter {
+    margin: 58px 0;
+}
+
+.chapter-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+
+    gap: 15px;
+}
+
+.chapter-head p {
+    color: #8d8294;
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    margin: 0 0 7px;
+}
+
+.chapter-head h3 {
+    font-size: 35px;
+    margin: 0;
+}
+
+.chapter-head small {
+    color: #8d8294;
+    letter-spacing: 0.15em;
+    font-size: 9px;
+}
+
+
+/* =================================
+   10. MOMENT CARDS
+================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.card {
+    padding: 0;
+    text-align: left;
+
+    color: #f7f0e9;
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #e9a9bd99;
+}
+
+.art {
+    height: 145px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 48px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(233, 169, 189, 0.2),
+            transparent 65%
+        ),
+        linear-gradient(135deg, #282036, #171421);
+}
+
+.card-info {
+    padding: 14px 16px 17px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+}
+
+.check {
+    color: var(--pink);
+}
+
+.card h4 {
+    font: 600 24px "Cormorant Garamond", serif;
+    margin: 8px 0 4px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 11px;
+    margin: 0;
+}
+
+
+/* =================================
+   11. FINAL MESSAGE
+================================= */
+
+.ending {
+    text-align: center;
+    max-width: 760px;
+    margin: auto;
+    padding: 125px 24px;
+}
+
+.star {
+    font-size: 48px;
+    color: var(--gold);
+}
+
+.ending > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.ending blockquote {
+    color: #e8c4d0;
+    font-size: 26px;
+    line-height: 1.4;
+    margin: 30px auto;
+}
+
+.ending strong {
+    display: block;
+    font: 24px "Cormorant Garamond", serif;
+    margin: 30px;
+}
+
+.ending strong span,
+footer span {
+    color: var(--pink);
+}
+
+.outline {
+    padding: 14px 20px;
+
+    color: var(--pink);
+    background: transparent;
+
+    border: 1px solid #e9a9bd88;
+
+    font-size: 10px;
+    letter-spacing: 0.14em;
+}
+
+.back {
+    display: block;
+    color: #988b9e;
+    text-decoration: none;
+    font-size: 11px;
+    margin-top: 28px;
+}
+
+
+/* =================================
+   12. MOMENT POPUP
+================================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+
+    background: #050409d9;
+    backdrop-filter: blur(12px);
+
+    display: grid;
+    place-items: center;
+
+    padding: 20px;
+    overflow: auto;
+}
+
+.modal {
+    width: min(850px, 100%);
+    max-height: 92vh;
+    overflow: auto;
+
+    background: #191522;
+    border: 1px solid var(--line);
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+}
+
+.close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    z-index: 2;
+
+    border: none;
+    background: #0005;
+    color: white;
+
+    font-size: 30px;
+
+    width: 40px;
+    height: 40px;
+}
+
+.scene-art {
+    min-height: 450px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(233, 169, 189, 0.24),
+            transparent 55%
+        ),
+        linear-gradient(145deg, #33283d, #14111c);
+}
+
+.modal-body {
+    padding: 52px 40px 32px;
+}
+
+.modal-body small {
+    display: block;
+    color: #887d90;
+    letter-spacing: 0.15em;
+    margin-top: 28px;
+}
+
+.modal-body h2 {
+    font-size: 48px;
+    line-height: 0.95;
+    margin: 9px 0 18px;
+}
+
+.description {
+    color: #c0b5c5;
+    line-height: 1.9;
+    font-size: 13px;
+}
+
+
+/* =================================
+   13. INTERACTIVE CHOICES
+================================= */
+
+.choice {
+    border-top: 1px solid var(--line);
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+.choice h3 {
+    font-size: 23px;
+}
+
+.choice button {
+    padding: 10px 12px;
+    margin: 3px;
+
+    background: transparent;
+    border: 1px solid var(--line);
+
+    color: #d9cdd9;
+    font-size: 11px;
+}
+
+.choice button:hover,
+.choice button.selected {
+    border-color: var(--pink);
+    color: var(--pink);
+    background: #e9a9bd14;
+}
+
+.reply {
+    font: italic 19px "Cormorant Garamond", serif;
+    color: var(--pink);
+    line-height: 1.4;
+}
+
+
+/* =================================
+   14. POPUP NAVIGATION
+================================= */
+
+.modal nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.previous {
+    border: none;
+    background: none;
+
+    color: #9c91a1;
+
+    font-size: 9px;
+    letter-spacing: 0.1em;
+}
+
+.next {
+    margin: 0;
+    padding: 13px 15px;
+}
+
+
+/* =================================
+   15. FOOTER
+================================= */
+
+footer {
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    padding: 25px;
+
+    color: #766d7d;
+
+    font-size: 9px;
+    letter-spacing: 0.2em;
+}
+
+
+/* =================================
+   16. TABLET AND MOBILE
+================================= */
+
+@media (max-width: 760px) {
+
+    header {
+        padding: 0 18px;
+    }
+
+    .journey {
+        padding: 75px 18px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .art {
+        height: 120px;
+    }
+
+    .card-info {
+        padding: 12px;
+    }
+
+    .card h4 {
+        font-size: 21px;
+    }
+
+    .chapter-head h3 {
+        font-size: 29px;
+    }
+
+    .modal {
+        display: block;
+    }
+
+    .scene-art {
+        min-height: 190px;
+        font-size: 65px;
+    }
+
+    .modal-body {
+        padding: 26px 22px;
+    }
+
+    .modal-body small {
+        margin-top: 16px;
+    }
+
+    .modal-body h2 {
+        font-size: 42px;
+    }
+
+}
+
+
+/* =================================
+   17. SMALL PHONES
+================================= */
+
+@media (max-width: 390px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .art {
+        height: 130px;
+    }
+
+}

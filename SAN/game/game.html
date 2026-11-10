@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandhiya's Starry Adventure ❤️</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+<div id="game-container">
+
+    <header class="hud">
+        <div class="hud-player">
+            <span class="hud-label">LIVES</span>
+            <div id="lives" aria-label="3 lives">❤️ ❤️ ❤️</div>
+        </div>
+
+        <div class="hud-score">
+            <span class="hud-label">STARS COLLECTED</span>
+            <div id="score">⭐ 0 / 100</div>
+        </div>
+
+        <div class="hud-actions">
+    <button id="back-btn">← Universe</button>
+    <button id="pause-btn" aria-label="Pause game">Ⅱ</button>
+</div>
+    </header>
+
+    <div class="game-stage">
+        <canvas id="gameCanvas" width="960" height="540">
+            Your browser does not support canvas.
+        </canvas>
+
+        <div id="game-message">
+            Collect stars and find Jiten!
+        </div>
+
+        <div id="start-screen" class="overlay">
+            <div class="panel">
+                <div class="panel-symbol">✦</div>
+                <p class="eyebrow">A LITTLE ADVENTURE FOR YOU</p>
+                <h1>Sandhiya's<br><span>Starry journey</span></h1>
+                <p>Run, jump and collect 100 stars Someone is waiting at the end ❤️</p>
+                <button id="start-btn">Begin Adventure <span>→</span></button>
+                <small>Move: A / D or ← / → &nbsp; Jump: W / Space / ↑</small>
+            </div>
+        </div>
+
+        <div id="pause-screen" class="overlay hidden">
+            <div class="panel">
+                <p class="eyebrow">TAKE YOUR TIME</p>
+                <h1>Adventure Paused</h1>
+                <p>Your journey is waiting.</p>
+                <button id="resume-btn">Continue <span>→</span></button>
+            </div>
+        </div>
+
+        <div id="game-over-screen" class="overlay hidden">
+            <div class="panel">
+                <p class="eyebrow">EVERY JOURNEY HAS ITS CHALLENGES</p>
+                <h1>Don't Give Up!</h1>
+                <p>You can always try again. Jiten is still waiting for you. ❤️</p>
+                <button id="retry-btn">Try Again ↻</button>
+            </div>
+        </div>
+
+        <div id="ending-screen" class="overlay hidden">
+            <div class="panel ending-panel">
+                <div class="panel-symbol">♥</div>
+                <p class="eyebrow">YOU FOUND EACH OTHER</p>
+                <h1>At Last,<br><span>Together</span></h1>
+                <p>mwwwaahhhhhhh my baby</p>
+                <p class="forever"></p>
+                <button id="restart-btn">Relive Our Adventure ↻</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-controls">
+        <div>
+            <button id="left-btn" aria-label="Move left">◀</button>
+            <button id="right-btn" aria-label="Move right">▶</button>
+        </div>
+        <button id="jump-btn" aria-label="Jump">⬆</button>
+    </div>
+
+    <footer class="game-footer">
+        <span>✦ MADE WITH LOVE ✦</span>
+        <span>JITEN & SANDHIYA</span>
+        <span>ONE LITTLE UNIVERSE</span>
+    </footer>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
